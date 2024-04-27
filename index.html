@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackerthon</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrapper bg-blue">
+        <div class="block-info">
+            <h2 title="block-title" class="h2-center">電力消耗</h2>
+            <p id="usage1" class="usage">本日消耗：16 度</p>
+            <p id="usage2" class="usage">昨日消耗：17 度</p>
+        </div>
+        <div class="block-info">
+            <h2 title="block-title" class="h2-center">水力消耗</h2>
+            <p id="usage3" class="usage">本日消耗：288 公升</p>
+            <p id="usage4" class="usage">昨日消耗：300 公升</p>
+        </div>
+        <div class="block-info">
+            <h2 title="block-title" class="h2-center">本日發電狀況</h2>
+            <p id="" class="usage">跑步機產生電壓：0 V</p>
+            <p id="" class="usage">太陽能板產生電壓：0 V</p>
+            <p id="" class="usage">冷氣溫差產生電壓：0 V</p>
+        </div>
+        <div class="block-info">
+            <h2 title="block-title" class="h2-center">運行電量排行</h2>
+            <p>用量排行</p>
+            <p>1. 冰箱</p>
+            <p>2. 冷氣</p>
+            <p>3. 電風扇</p>
+        </div>
+    </div>
+    <script>
+        function replaceNumber() {
+            for (var i = 1; i <= 4; i++) {
+                var usageElement = document.getElementById('usage' + i);
+                switch(i){
+                    case 1:
+                        usageElement.textContent = "今日消耗：" + (Math.floor(Math.random() * 20) + 2) + " 度";
+                        break;
+                    case 2:
+                        usageElement.textContent = "昨日消耗：" + (Math.floor(Math.random() * 20) + 2) + " 度";
+                        break;
+                    case 3:
+                        usageElement.textContent = "今日消耗：" + (Math.floor(Math.random() * 100) + 50) + " 公升"
+                        break;
+                    case 4:
+                        usageElement.textContent = "昨日消耗：" + (Math.floor(Math.random() * 20) + 50) + " 公升"
+                        break;
+                }
+            }
+        }
+        setInterval(replaceNumber, 5000);
+    </script>
+</body>
+</html>
